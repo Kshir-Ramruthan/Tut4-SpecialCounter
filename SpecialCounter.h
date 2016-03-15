@@ -13,5 +13,9 @@ public:
 	void stop(int stop);
 	void stepInc(int stepSize);
 	void stepDec(int stepSize);
+	int& operator++(void);
+	int operator++(int);
+	int& operator--(void);
+	int operator--(int);
 };
 

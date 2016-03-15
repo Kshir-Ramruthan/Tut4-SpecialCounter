@@ -5,42 +5,46 @@ SpecialCounter::SpecialCounter()
 {
 	begin = 0;
 	end = 255;
-}
+}//End
 
 //Default Destructor
 SpecialCounter::~SpecialCounter()
 {
-}
+}//End
 
 //Set Methods
 void SpecialCounter::start(int start)
 {
 	begin = start;
-}
+	if (counter < start)
+		counter = start;
+}//End
 
 void SpecialCounter::stop(int stop)
 {
 	end = stop;
-}
+	if (counter > stop)
+		counter = stop;
+}//End
 
 //Increment and Decrement methods
 void SpecialCounter::stepInc(int stepSize)
 {
 	if (counter <= (end - stepSize))
 		counter = counter + stepSize;
-}
+}//End
 
 void SpecialCounter::stepDec(int stepSize)
 {
 	if (counter >= (begin + stepSize))
 		counter = counter - stepSize;
-}
+}//End
 
 int& SpecialCounter::operator++(void)
 {
 	if (counter < end)
 		counter ++;
-}
+}//End
 
 int SpecialCounter::operator++(int)
 {
@@ -50,13 +54,13 @@ int SpecialCounter::operator++(int)
 		++temp;
 	}
 	return temp;
-}
+}//End
 
 int& SpecialCounter::operator--(void)
 {
 	if (counter > begin)
 		counter--;
-}
+}//End
 
 int SpecialCounter::operator--(int)
 {
@@ -66,4 +70,9 @@ int SpecialCounter::operator--(int)
 		--temp;
 	}
 	return temp;
+}//End
+
+int SpecialCounter::value(void)
+{
+	return counter;
 }

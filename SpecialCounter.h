@@ -17,5 +17,6 @@ public:
 	int operator++(int);
 	int& operator--(void);
 	int operator--(int);
-};
+	int value();
+};//End class
 

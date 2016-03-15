@@ -5,8 +5,6 @@ private:
 	int counter;
 	int begin;
 	int end;
-	int inc;
-	int dec;
 
 public:
 	SpecialCounter();

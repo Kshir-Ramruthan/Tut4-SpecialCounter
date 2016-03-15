@@ -5,6 +5,7 @@ SpecialCounter::SpecialCounter()
 {
 	begin = 0;
 	end = 255;
+	counter = 0;
 }//End
 
 //Default Destructor
@@ -44,6 +45,7 @@ int& SpecialCounter::operator++(void)
 {
 	if (counter < end)
 		counter ++;
+	return counter;
 }//End
 
 int SpecialCounter::operator++(int)
@@ -60,6 +62,7 @@ int& SpecialCounter::operator--(void)
 {
 	if (counter > begin)
 		counter--;
+	return counter;
 }//End
 
 int SpecialCounter::operator--(int)
